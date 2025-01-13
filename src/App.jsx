@@ -65,9 +65,15 @@ function App() {
     });
   }
 
+  const contextValue = {
+    items: shoppingCart.items,
+    addItem: handleAddItemToCart,
+    
+  }
+
   return (
     //If react version < 19 use <CartContext.Provider> and for the closing tag too
-    <CartContext value={{ items: [] }}>
+    <CartContext value={contextValue}>
       <Header
         cart={shoppingCart}
         onUpdateCartItemQuantity={handleUpdateCartItemQuantity}
